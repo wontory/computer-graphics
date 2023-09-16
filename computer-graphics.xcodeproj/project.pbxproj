@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AEC87CA32AB27E6F00E1BD99 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEC87CA22AB27E6F00E1BD99 /* main.cpp */; };
+		AE4070D12AB570690040CD1D /* 1-2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE95B6B42AB56A50004DA9E5 /* 1-2.cpp */; };
+		AEC87CAB2AB27EE300E1BD99 /* lib in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC87CAA2AB27EE300E1BD99 /* lib */; };
+		AEC87CAD2AB27F0500E1BD99 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC87CAC2AB27F0500E1BD99 /* GLUT.framework */; };
+		AEC87CAF2AB27F0A00E1BD99 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC87CAE2AB27F0A00E1BD99 /* OpenGL.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +26,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		AEC87C9F2AB27E6F00E1BD99 /* computer graphics */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "computer graphics"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AEC87CA22AB27E6F00E1BD99 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		AE95B6B42AB56A50004DA9E5 /* 1-2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "1-2.cpp"; sourceTree = "<group>"; };
+		AEC87C9F2AB27E6F00E1BD99 /* computer-graphics */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "computer-graphics"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEC87CA22AB27E6F00E1BD99 /* 1-1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "1-1.cpp"; sourceTree = "<group>"; };
+		AEC87CAA2AB27EE300E1BD99 /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; name = lib; path = ../../../../../opt/homebrew/Cellar/freeglut/3.4.0/lib; sourceTree = "<group>"; };
+		AEC87CAC2AB27F0500E1BD99 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		AEC87CAE2AB27F0A00E1BD99 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +39,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEC87CAF2AB27F0A00E1BD99 /* OpenGL.framework in Frameworks */,
+				AEC87CAD2AB27F0500E1BD99 /* GLUT.framework in Frameworks */,
+				AEC87CAB2AB27EE300E1BD99 /* lib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,33 +51,45 @@
 		AEC87C962AB27E6F00E1BD99 = {
 			isa = PBXGroup;
 			children = (
-				AEC87CA12AB27E6F00E1BD99 /* computer graphics */,
+				AEC87CA12AB27E6F00E1BD99 /* computer-graphics */,
 				AEC87CA02AB27E6F00E1BD99 /* Products */,
+				AEC87CA92AB27EE300E1BD99 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		AEC87CA02AB27E6F00E1BD99 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AEC87C9F2AB27E6F00E1BD99 /* computer graphics */,
+				AEC87C9F2AB27E6F00E1BD99 /* computer-graphics */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AEC87CA12AB27E6F00E1BD99 /* computer graphics */ = {
+		AEC87CA12AB27E6F00E1BD99 /* computer-graphics */ = {
 			isa = PBXGroup;
 			children = (
-				AEC87CA22AB27E6F00E1BD99 /* main.cpp */,
+				AE95B6B42AB56A50004DA9E5 /* 1-2.cpp */,
+				AEC87CA22AB27E6F00E1BD99 /* 1-1.cpp */,
 			);
-			path = "computer graphics";
+			path = "computer-graphics";
+			sourceTree = "<group>";
+		};
+		AEC87CA92AB27EE300E1BD99 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AEC87CAE2AB27F0A00E1BD99 /* OpenGL.framework */,
+				AEC87CAC2AB27F0500E1BD99 /* GLUT.framework */,
+				AEC87CAA2AB27EE300E1BD99 /* lib */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AEC87C9E2AB27E6F00E1BD99 /* computer graphics */ = {
+		AEC87C9E2AB27E6F00E1BD99 /* computer-graphics */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AEC87CA62AB27E6F00E1BD99 /* Build configuration list for PBXNativeTarget "computer graphics" */;
+			buildConfigurationList = AEC87CA62AB27E6F00E1BD99 /* Build configuration list for PBXNativeTarget "computer-graphics" */;
 			buildPhases = (
 				AEC87C9B2AB27E6F00E1BD99 /* Sources */,
 				AEC87C9C2AB27E6F00E1BD99 /* Frameworks */,
@@ -77,9 +99,9 @@
 			);
 			dependencies = (
 			);
-			name = "computer graphics";
+			name = "computer-graphics";
 			productName = "computer graphics";
-			productReference = AEC87C9F2AB27E6F00E1BD99 /* computer graphics */;
+			productReference = AEC87C9F2AB27E6F00E1BD99 /* computer-graphics */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -96,7 +118,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AEC87C9A2AB27E6F00E1BD99 /* Build configuration list for PBXProject "computer graphics" */;
+			buildConfigurationList = AEC87C9A2AB27E6F00E1BD99 /* Build configuration list for PBXProject "computer-graphics" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -109,7 +131,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AEC87C9E2AB27E6F00E1BD99 /* computer graphics */,
+				AEC87C9E2AB27E6F00E1BD99 /* computer-graphics */,
 			);
 		};
 /* End PBXProject section */
@@ -119,7 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEC87CA32AB27E6F00E1BD99 /* main.cpp in Sources */,
+				AE4070D12AB570690040CD1D /* 1-2.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +269,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4DYQ6M6SLR;
 				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = /opt/homebrew/Cellar/freeglut/3.4.0/include;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -257,6 +280,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4DYQ6M6SLR;
 				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = /opt/homebrew/Cellar/freeglut/3.4.0/include;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -264,7 +288,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AEC87C9A2AB27E6F00E1BD99 /* Build configuration list for PBXProject "computer graphics" */ = {
+		AEC87C9A2AB27E6F00E1BD99 /* Build configuration list for PBXProject "computer-graphics" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AEC87CA42AB27E6F00E1BD99 /* Debug */,
@@ -273,7 +297,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AEC87CA62AB27E6F00E1BD99 /* Build configuration list for PBXNativeTarget "computer graphics" */ = {
+		AEC87CA62AB27E6F00E1BD99 /* Build configuration list for PBXNativeTarget "computer-graphics" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AEC87CA72AB27E6F00E1BD99 /* Debug */,
