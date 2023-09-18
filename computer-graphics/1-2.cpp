@@ -2,7 +2,6 @@
 #include <GL/glut.h>
 #include <OpenGL/GL.h>
 #include <OpenGL/GLU.h>
-#include <cmath>
 
 void Display() {
     glClearColor(1.0f, 0.411765f, 0.705882f, 1.0f);     // 배경 색상 Clear: Hot Pink, (2) 배경 색상 변경
