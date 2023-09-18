@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AE4070D12AB570690040CD1D /* 1-2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE95B6B42AB56A50004DA9E5 /* 1-2.cpp */; };
+		AE2A602B2AB82DEE003AE37A /* 1-6.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE2A602A2AB82DEE003AE37A /* 1-6.cpp */; };
 		AEC87CAB2AB27EE300E1BD99 /* lib in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC87CAA2AB27EE300E1BD99 /* lib */; };
 		AEC87CAD2AB27F0500E1BD99 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC87CAC2AB27F0500E1BD99 /* GLUT.framework */; };
 		AEC87CAF2AB27F0A00E1BD99 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC87CAE2AB27F0A00E1BD99 /* OpenGL.framework */; };
@@ -26,6 +26,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AE2A60282AB827BB003AE37A /* 1-5.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "1-5.cpp"; sourceTree = "<group>"; };
+		AE2A602A2AB82DEE003AE37A /* 1-6.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "1-6.cpp"; sourceTree = "<group>"; };
+		AE8675002AB74C540015426F /* 1-3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "1-3.cpp"; sourceTree = "<group>"; };
+		AE8675022AB74DBD0015426F /* 1-4.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "1-4.cpp"; sourceTree = "<group>"; };
 		AE95B6B42AB56A50004DA9E5 /* 1-2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "1-2.cpp"; sourceTree = "<group>"; };
 		AEC87C9F2AB27E6F00E1BD99 /* computer-graphics */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "computer-graphics"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEC87CA22AB27E6F00E1BD99 /* 1-1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "1-1.cpp"; sourceTree = "<group>"; };
@@ -70,6 +74,10 @@
 			children = (
 				AE95B6B42AB56A50004DA9E5 /* 1-2.cpp */,
 				AEC87CA22AB27E6F00E1BD99 /* 1-1.cpp */,
+				AE8675002AB74C540015426F /* 1-3.cpp */,
+				AE8675022AB74DBD0015426F /* 1-4.cpp */,
+				AE2A60282AB827BB003AE37A /* 1-5.cpp */,
+				AE2A602A2AB82DEE003AE37A /* 1-6.cpp */,
 			);
 			path = "computer-graphics";
 			sourceTree = "<group>";
@@ -141,7 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE4070D12AB570690040CD1D /* 1-2.cpp in Sources */,
+				AE2A602B2AB82DEE003AE37A /* 1-6.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
