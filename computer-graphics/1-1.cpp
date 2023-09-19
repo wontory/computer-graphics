@@ -1,4 +1,4 @@
-#define GL_SILENCE_DEPRECATION
+#define GL_SILENCE_DEPRECATION              // MacOS Deprecated 오류 미출력 코드
 #include <GL/glut.h>
 #include <OpenGL/GL.h>
 #include <OpenGL/GLU.h>
