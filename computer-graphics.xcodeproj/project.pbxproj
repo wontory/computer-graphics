@@ -10,6 +10,7 @@
 		AEC87CAB2AB27EE300E1BD99 /* lib in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC87CAA2AB27EE300E1BD99 /* lib */; };
 		AEC87CAD2AB27F0500E1BD99 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC87CAC2AB27F0500E1BD99 /* GLUT.framework */; };
 		AEC87CAF2AB27F0A00E1BD99 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC87CAE2AB27F0A00E1BD99 /* OpenGL.framework */; };
+		AEF57A0D2ACEAE97000EE94E /* 2-2-3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEF57A0C2ACEAE97000EE94E /* 2-2-3.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +36,10 @@
 		AEC87CAA2AB27EE300E1BD99 /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; name = lib; path = ../../../../../opt/homebrew/Cellar/freeglut/3.4.0/lib; sourceTree = "<group>"; };
 		AEC87CAC2AB27F0500E1BD99 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		AEC87CAE2AB27F0A00E1BD99 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		AEF57A052ACEACD9000EE94E /* 2-2-1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "2-2-1.cpp"; sourceTree = "<group>"; };
+		AEF57A072ACEAD05000EE94E /* 2-2-2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "2-2-2.cpp"; sourceTree = "<group>"; };
+		AEF57A0C2ACEAE97000EE94E /* 2-2-3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "2-2-3.cpp"; sourceTree = "<group>"; };
+		AEFD79822ACE9FFB006BB638 /* 2-1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "2-1.cpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +82,10 @@
 				AE8675022AB74DBD0015426F /* 1-4.cpp */,
 				AE2A60282AB827BB003AE37A /* 1-5.cpp */,
 				AE2A602A2AB82DEE003AE37A /* 1-6.cpp */,
+				AEFD79822ACE9FFB006BB638 /* 2-1.cpp */,
+				AEF57A052ACEACD9000EE94E /* 2-2-1.cpp */,
+				AEF57A072ACEAD05000EE94E /* 2-2-2.cpp */,
+				AEF57A0C2ACEAE97000EE94E /* 2-2-3.cpp */,
 			);
 			path = "computer-graphics";
 			sourceTree = "<group>";
@@ -148,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEF57A0D2ACEAE97000EE94E /* 2-2-3.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
