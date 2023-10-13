@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AEA5ED352AD4947E004A344D /* 2-5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEA5ED342AD4947E004A344D /* 2-5.cpp */; };
 		AEC87CAB2AB27EE300E1BD99 /* lib in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC87CAA2AB27EE300E1BD99 /* lib */; };
 		AEC87CAD2AB27F0500E1BD99 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC87CAC2AB27F0500E1BD99 /* GLUT.framework */; };
 		AEC87CAF2AB27F0A00E1BD99 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC87CAE2AB27F0A00E1BD99 /* OpenGL.framework */; };
+		AEF7C34A2AD9A31B00768977 /* 2-5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AEA5ED342AD4947E004A344D /* 2-5.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -163,7 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEA5ED352AD4947E004A344D /* 2-5.cpp in Sources */,
+				AEF7C34A2AD9A31B00768977 /* 2-5.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
