@@ -3,7 +3,7 @@ import { useFrame, useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
 export default function Car() {
-  const mesh = useLoader(GLTFLoader, '/models/car.glb').scene;
+  const mesh = useLoader(GLTFLoader, './models/car.glb').scene;
 
   useEffect(() => {
     mesh.scale.set(0.0012, 0.0012, 0.0012);

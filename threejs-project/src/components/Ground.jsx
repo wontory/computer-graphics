@@ -8,9 +8,9 @@ export default function Ground() {
   const meshRef = useRef(null);
   const meshRef2 = useRef(null);
 
-  const gridMap = useLoader(TextureLoader, '/textures/grid.png');
-  const aoMap = useLoader(TextureLoader, '/textures/ground-ao.png');
-  const alphaMap = useLoader(TextureLoader, '/textures/alpha-map.png');
+  const gridMap = useLoader(TextureLoader, './textures/grid.png');
+  const aoMap = useLoader(TextureLoader, './textures/ground-ao.png');
+  const alphaMap = useLoader(TextureLoader, './textures/alpha-map.png');
 
   useEffect(() => {
     gridMap.anisotropy = 16;
