@@ -1035,6 +1035,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"car-physics@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "car-physics@workspace:."
+  dependencies:
+    "@react-three/cannon": "npm:^6.6.0"
+    "@react-three/drei": "npm:^9.88.9"
+    "@react-three/fiber": "npm:^8.15.9"
+    "@types/react": "npm:^18.2.15"
+    "@types/react-dom": "npm:^18.2.7"
+    "@vitejs/plugin-react-swc": "npm:^3.3.2"
+    eslint: "npm:^8.45.0"
+    eslint-plugin-react: "npm:^7.32.2"
+    eslint-plugin-react-hooks: "npm:^4.6.0"
+    eslint-plugin-react-refresh: "npm:^0.4.3"
+    react: "npm:^18.2.0"
+    react-dom: "npm:^18.2.0"
+    three: "npm:^0.158.0"
+    vite: "npm:^4.4.5"
+  languageName: unknown
+  linkType: soft
+
 "chalk@npm:^4.0.0":
   version: 4.1.2
   resolution: "chalk@npm:4.1.2"
@@ -3433,27 +3454,6 @@ __metadata:
   checksum: b75e88f5e213d026f809d515433f6ce36bb2beebb952120700e850ec9f3fd69032c873ecf3455a586c032c72f4b67ee844b4be867016c7346828b4d1b3560014
   languageName: node
   linkType: hard
-
-"car-physics@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "car-physics@workspace:."
-  dependencies:
-    "@react-three/cannon": "npm:^6.6.0"
-    "@react-three/drei": "npm:^9.88.9"
-    "@react-three/fiber": "npm:^8.15.9"
-    "@types/react": "npm:^18.2.15"
-    "@types/react-dom": "npm:^18.2.7"
-    "@vitejs/plugin-react-swc": "npm:^3.3.2"
-    eslint: "npm:^8.45.0"
-    eslint-plugin-react: "npm:^7.32.2"
-    eslint-plugin-react-hooks: "npm:^4.6.0"
-    eslint-plugin-react-refresh: "npm:^0.4.3"
-    react: "npm:^18.2.0"
-    react-dom: "npm:^18.2.0"
-    three: "npm:^0.158.0"
-    vite: "npm:^4.4.5"
-  languageName: unknown
-  linkType: soft
 
 "troika-three-text@npm:^0.47.2":
   version: 0.47.2
