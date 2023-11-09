@@ -1,10 +1,19 @@
 import { useEffect, useRef } from 'react';
 import { BufferAttribute, CircleGeometry, Mesh } from 'three';
 import { useLoader } from '@react-three/fiber';
-import { TextureLoader } from 'three/src/loaders/TextureLoader';
 import { MeshReflectorMaterial } from '@react-three/drei';
+import { usePlane } from '@react-three/cannon';
+import { TextureLoader } from 'three/src/loaders/TextureLoader';
 
 export default function Ground() {
+  const [ref] = usePlane(
+    () => ({
+      type: 'Static',
+      rotation: [-Math.PI / 2, 0, 0],
+    }),
+    useRef(null)
+  );
+
   const meshRef = useRef(null);
   const meshRef2 = useRef(null);
 
