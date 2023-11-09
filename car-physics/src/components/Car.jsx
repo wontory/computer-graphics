@@ -45,10 +45,17 @@ export default function Car() {
 
   return (
     <group ref={vehicle} name="vehicle">
-      <mesh ref={chassisBody}>
+      <group ref={chassisBody} name="chassis">
+        <primitive
+          object={mesh}
+          rotation-y={Math.PI}
+          position={[0, -0.09, 0]}
+        />
+      </group>
+      {/* <mesh ref={chassisBody}>
         <meshBasicMaterial transparent={true} opacity={0.3} />
         <boxGeometry args={chassisBodyArgs} />
-      </mesh>
+      </mesh> */}
       {wheels.map((wheel, index) => (
         <WheelDebug
           key={`wheel-${index}`}
