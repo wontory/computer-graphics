@@ -5,8 +5,9 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { WheelDebug } from './WheelDebug';
 import { useWheels } from '../hooks/useWheel';
 import { useControls } from '../hooks/useControls';
+import { Vector3, Quaternion } from 'three';
 
-export default function Car() {
+export default function Car({ thirdPerson }) {
   const mesh = useLoader(GLTFLoader, './models/car.glb').scene;
 
   const position = [-1.5, 0.5, 3];
@@ -37,6 +38,27 @@ export default function Car() {
   );
 
   useControls(vehicleApi, chassisApi);
+
+  useFrame((state) => {
+    if (!thirdPerson) return;
+
+    const position = new Vector3(0, 0, 0);
+    position.setFromMatrixPosition(chassisBody.current.matrixWorld);
+
+    const quaternion = new Quaternion(0, 0, 0, 0);
+    quaternion.setFromRotationMatrix(chassisBody.current.matrixWorld);
+
+    const wDir = new Vector3(0, 0, -1);
+    wDir.applyQuaternion(quaternion);
+    wDir.normalize();
+
+    const cameraPosition = position
+      .clone()
+      .add(wDir.clone().multiplyScalar(-1).add(new Vector3(0, 0.3, 0)));
+
+    state.camera.position.copy(cameraPosition);
+    state.camera.lookAt(position);
+  });
 
   useEffect(() => {
     mesh.scale.set(0.0012, 0.0012, 0.0012);
