@@ -3434,9 +3434,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"threejs-project@workspace:.":
+"car-physics@workspace:.":
   version: 0.0.0-use.local
-  resolution: "threejs-project@workspace:."
+  resolution: "car-physics@workspace:."
   dependencies:
     "@react-three/cannon": "npm:^6.6.0"
     "@react-three/drei": "npm:^9.88.9"
