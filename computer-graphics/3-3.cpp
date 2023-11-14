@@ -63,6 +63,38 @@ void drawControlLines() {
     }
 }
 
+int binomialCoeff(int n, int k) {
+    if (k == 0 || k == n)
+        return 1;
+    return binomialCoeff(n - 1, k - 1) + binomialCoeff(n - 1, k);
+}
+
+void drawBezierSurface() {
+    glColor4f(0.0f, 0.0f, 1.0f, 1.0f);
+    
+    for (float u = 0.0f; u < 1.0f; u += 0.001f) {
+        glBegin(GL_LINE_STRIP);
+        
+        for (float v = 0.0f; v < 1.0f; v += 0.001f) {
+            float x = 0.0;
+            float y = 0.0;
+            float z = 0.0;
+            
+            for (int j = 0; j < 4; j++) {
+                for (int k = 0; k < 4; k++) {
+                    float basisU = binomialCoeff(3, j) * pow(1 - u, 3 - j) * pow(u, j);
+                    float basisV = binomialCoeff(3, k) * pow(1 - v, 3 - k) * pow(v, k);
+                    x += basisU * basisV * ctrlpoints[j][k][0];
+                    y += basisU * basisV * ctrlpoints[j][k][1];
+                    z += basisU * basisV * ctrlpoints[j][k][2];
+                }
+            }
+            glVertex3f(x, y, z);
+        }
+        glEnd();
+    }
+}
+
 void display() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glEnable(GL_DEPTH_TEST);
@@ -71,6 +103,7 @@ void display() {
     drawPlane();
     drawControlPoints();
     drawControlLines();
+    drawBezierSurface();
 
     glFlush();
 }
