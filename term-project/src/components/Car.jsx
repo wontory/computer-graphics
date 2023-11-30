@@ -48,7 +48,7 @@ export default function Car({ thirdPerson = true }) {
     const quaternion = new Quaternion(0, 0, 0, 0);
     quaternion.setFromRotationMatrix(chassisBody.current.matrixWorld);
 
-    const wDir = new Vector3(0, 0, -1);
+    const wDir = new Vector3(0, -0.3, -1);
     wDir.applyQuaternion(quaternion);
     wDir.normalize();
 
