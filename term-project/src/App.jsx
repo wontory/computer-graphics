@@ -1,33 +1,30 @@
-import { Suspense } from 'react';
+import { Suspense, useMemo } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { Physics } from '@react-three/cannon';
-import Heightfield from './components/HeightField';
-import { generateHeightmap } from './components/HeightField';
-import Car from './components/Car';
+import { Physics } from '@react-three/rapier';
+import { KeyboardControls } from '@react-three/drei';
+import Scene from './Scene';
 
-function App({ scale = 40 }) {
+function App() {
+  const map = useMemo(
+    () => [
+      { name: 'forward', keys: ['ArrowUp'] },
+      { name: 'back', keys: ['ArrowDown'] },
+      { name: 'left', keys: ['ArrowLeft'] },
+      { name: 'right', keys: ['ArrowRight'] },
+    ],
+    []
+  );
+
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <Canvas>
-        <Physics>
-          <ambientLight intensity={0.5} />
-          <directionalLight position={[0, 3, 0]} castShadow />
-          <pointLight position={[0, 13, 0]} intensity={10} power={1024} />
-          <Heightfield
-            elementSize={(scale * 1) / 128}
-            heights={generateHeightmap({
-              height: 128,
-              number: 10,
-              scale: 5,
-              width: 128,
-            })}
-            position={[-scale / 2, 0, scale / 2]}
-            rotation={[-Math.PI / 2, 0, 0]}
-          />
-          <Car />
-        </Physics>
+    <KeyboardControls map={map}>
+      <Canvas shadows camera={{ position: [3, 3, 3], fov: 30 }}>
+        <Suspense>
+          <Physics debug>
+            <Scene />
+          </Physics>
+        </Suspense>
       </Canvas>
-    </Suspense>
+    </KeyboardControls>
   );
 }
 

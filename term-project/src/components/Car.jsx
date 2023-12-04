@@ -1,86 +1,40 @@
-import { useEffect, useRef } from 'react';
-import { useFrame, useLoader } from '@react-three/fiber';
-import { useBox, useRaycastVehicle } from '@react-three/cannon';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { WheelDebug } from './WheelDebug';
-import { useWheels } from '../hooks/useWheel';
-import { useControls } from '../hooks/useControls';
-import { Vector3, Quaternion } from 'three';
+import { useRef } from 'react';
+import { useFrame } from '@react-three/fiber';
+import { Sphere, useKeyboardControls } from '@react-three/drei';
+import { BallCollider, RigidBody } from '@react-three/rapier';
 
-export default function Car({ thirdPerson = true }) {
-  const mesh = useLoader(GLTFLoader, './models/car.glb').scene;
+function Car() {
+  const car = useRef();
 
-  const position = [0, 5, 0];
-  const width = 0.15;
-  const height = 0.07;
-  const front = 0.15;
-  const wheelRadius = 0.05;
+  const leftPressed = useKeyboardControls((state) => state['left']);
+  const rightPressed = useKeyboardControls((state) => state['right']);
+  const backPressed = useKeyboardControls((state) => state['back']);
+  const forwardPressed = useKeyboardControls((state) => state['forward']);
 
-  const chassisBodyArgs = [width, height, front * 2];
-  const [chassisBody, chassisApi] = useBox(
-    () => ({
-      args: chassisBodyArgs,
-      mass: 150,
-      position,
-    }),
-    useRef(null)
-  );
+  const handleMovement = () => {
+    if (rightPressed) car.current.applyImpulse({ x: 0.1, y: 0, z: 0 });
+    if (leftPressed) car.current.applyImpulse({ x: -0.1, y: 0, z: 0 });
+    if (backPressed) car.current.applyImpulse({ x: 0, y: 0, z: 0.1 });
+    if (forwardPressed) car.current.applyImpulse({ x: 0, y: 0, z: -0.1 });
+  };
 
-  const [wheels, wheelInfos] = useWheels(width, height, front, wheelRadius);
-
-  const [vehicle, vehicleApi] = useRaycastVehicle(
-    () => ({
-      chassisBody,
-      wheelInfos,
-      wheels,
-    }),
-    useRef(null)
-  );
-
-  useControls(vehicleApi, chassisApi);
-
-  useFrame((state) => {
-    if (!thirdPerson) return;
-
-    const position = new Vector3(0, 0, 0);
-    position.setFromMatrixPosition(chassisBody.current.matrixWorld);
-
-    const quaternion = new Quaternion(0, 0, 0, 0);
-    quaternion.setFromRotationMatrix(chassisBody.current.matrixWorld);
-
-    const wDir = new Vector3(0, -0.3, -1);
-    wDir.applyQuaternion(quaternion);
-    wDir.normalize();
-
-    const cameraPosition = position
-      .clone()
-      .add(wDir.clone().multiplyScalar(-1).add(new Vector3(0, 0.3, 0)));
-
-    state.camera.position.copy(cameraPosition);
-    state.camera.lookAt(position);
+  useFrame(() => {
+    handleMovement();
   });
 
-  useEffect(() => {
-    mesh.scale.set(0.0012, 0.0012, 0.0012);
-    mesh.children[0].position.set(-365, -18, -67);
-  }, [mesh]);
-
   return (
-    <group ref={vehicle} name="vehicle">
-      <group ref={chassisBody} name="chassis">
-        <primitive
-          object={mesh}
-          rotation-y={Math.PI}
-          position={[0, -0.09, 0]}
-        />
-      </group>
-      {wheels.map((wheel, index) => (
-        <WheelDebug
-          key={`wheel-${index}`}
-          wheelRef={wheel}
-          radius={wheelRadius}
-        />
-      ))}
-    </group>
+    <RigidBody
+      position={[0, 5, 0]}
+      colliders={false}
+      gravityScale={4}
+      ref={car}
+    >
+      <BallCollider args={[1]} position={[0, 1, 0]} />
+      <Sphere position-y={1}>
+        <meshStandardMaterial color={'hotpink'} />
+      </Sphere>
+    </RigidBody>
   );
 }
+
+export default Car;
