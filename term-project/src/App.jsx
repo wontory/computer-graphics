@@ -18,8 +18,10 @@ function App() {
   return (
     <KeyboardControls map={map}>
       <Canvas shadows camera={{ position: [3, 3, 3], fov: 30 }}>
+        <hemisphereLight intensity={0.75} />
+        <ambientLight intensity={0.3} />
         <Suspense>
-          <Physics debug>
+          <Physics>
             <Scene />
           </Physics>
         </Suspense>
